@@ -1,0 +1,5 @@
+Sigma = 0.5, Cluster Centers = [array([-1.27336818, -1.13725429]), array([-0.02791211,  1.17977429]), array([ 1.03350788, -1.10066685])], Clustering Objective = 326.14828206716464, Clustering Accuracy = 0.82
+Sigma = 1, Cluster Centers = [array([0.09490712, 1.40278903]), array([-1.84868161, -1.2283131 ]), array([ 0.91548285, -1.29252145])], Clustering Objective = 534.630041141039, Clustering Accuracy = 0.68
+Sigma = 2, Cluster Centers = [array([0.37790789, 1.38434616]), array([-2.03625226, -1.47622994]), array([ 1.59599049, -2.11175731])], Clustering Objective = 1069.8016111324475, Clustering Accuracy = 0.56
+Sigma = 4, Cluster Centers = [array([ 1.60643216, -2.32109747]), array([-2.66732051, -1.1922063 ]), array([0.27236703, 2.36666002])], Clustering Objective = 1470.8925872982986, Clustering Accuracy = 0.5766666666666667
+Sigma = 8, Cluster Centers = [array([-3.15934145, -0.40601805]), array([2.32519789, 3.25533499]), array([ 1.81393071, -3.63968658])], Clustering Objective = 3584.8766593149785, Clustering Accuracy = 0.4266666666666667

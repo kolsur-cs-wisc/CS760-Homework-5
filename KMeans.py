@@ -49,5 +49,28 @@ class KMeans():
         return clustering_objective
     
     def accuracy(self):
-        pass
-    
+        distribution_means = [[-1, -1], [1, -1], [0, 1]]
+        labels = ['a', 'b', 'c']
+        label_dict = {}
+
+        for i in range(len(self.centroids)):
+            centroid = self.centroids[i]
+            dist = self.euclidean(centroid, distribution_means)
+            label_idx = np.argmin(dist)
+            label_dict[i] = labels[label_idx]
+
+        correct = 0
+        
+        for i in range(len(self.X)):
+            x = self.X[i]
+            label = 'a'
+            if i >= 100: label = 'b'
+            if i >= 200: label = 'c'
+
+            dist = self.euclidean(x, self.centroids)
+            label_idx = np.argmin(dist)
+            prediction = label_dict[label_idx]
+
+            if label == prediction : correct += 1
+
+        return correct/len(self.X)

@@ -1,12 +1,11 @@
 import numpy as np
 from KMeans import KMeans
 
-def generate_datasets():
-    sigmas = [0.5, 1, 2, 4, 8]
-    labels = ['a', 'b', 'c']
-    means = [[-1, -1], [1, -1], [0, 1]]
-    covariances = [[[2, 0.5],[0.5, 1]],[[1, -0.5],[-0.5, 2]], [[1, 0],[0, 2]]]
+sigmas = [0.5, 1, 2, 4, 8]
+means = [[-1, -1], [1, -1], [0, 1]]
+covariances = [[[2, 0.5],[0.5, 1]],[[1, -0.5],[-0.5, 2]], [[1, 0],[0, 2]]]
 
+def generate_datasets():
     for sigma in sigmas:
         for i in range(3):
             mean = np.array(means[i])
@@ -17,12 +16,15 @@ def generate_datasets():
             f.close()
 
 def main():
-    generate_datasets()
-    X_train = np.loadtxt(f'dataset_0.5.txt', delimiter=' ', dtype=float)
-    kmeans_model = KMeans()
-    centroids, clusters = kmeans_model.fit(X_train)
-    objective = kmeans_model.objective()
-    print(f'Cluster Centers = {centroids}, Clustering Objective = {objective}')
+    # generate_datasets()
+    results = []
+    for sigma in sigmas:
+        X_train = np.loadtxt(f'dataset_{sigma}.txt', delimiter=' ', dtype=float)
+        kmeans_model = KMeans()
+        centroids, clusters = kmeans_model.fit(X_train)
+        objective, accuracy = kmeans_model.objective(), kmeans_model.accuracy()
+        results.append(f'Sigma = {sigma}, Cluster Centers = {centroids}, Clustering Objective = {objective}, Clustering Accuracy = {accuracy}')
+    np.savetxt('Results K Means.txt', results, delimiter=' ', fmt='%s')
 
 if __name__ == "__main__":
     main()
