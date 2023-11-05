@@ -11,7 +11,7 @@ def generate_datasets():
             mean = np.array(means[i])
             covariance = np.array(covariances[i]) * sigma
             curr_sample = np.random.multivariate_normal(mean, covariance, 100)
-            f = open(f'dataset_{sigma}_labelled.txt', 'a')
+            f = open(f'data/dataset_{sigma}_labelled.txt', 'a')
             np.savetxt(f, curr_sample, delimiter = ' ')
             f.close()
 
@@ -19,7 +19,7 @@ def main():
     # generate_datasets()
     results = []
     for sigma in sigmas:
-        X_train = np.loadtxt(f'dataset_{sigma}.txt', delimiter=' ', dtype=float)
+        X_train = np.loadtxt(f'data/dataset_{sigma}.txt', delimiter=' ', dtype=float)
         kmeans_model = KMeans()
         centroids, clusters = kmeans_model.fit(X_train)
         objective, accuracy = kmeans_model.objective(), kmeans_model.accuracy()
