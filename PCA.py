@@ -3,19 +3,20 @@ import numpy as np
 class PCA():
     def __init__(self, X, d, type=''):
         self.X = X
+        self.D = X.shape[1]
         self.d = d
         self.type = type
 
     def demean(self):
-        mean = np.mean(self.X, axis=0)
-        demeaned_data = self.X - mean
+        self.mean = np.mean(self.X, axis=0)
+        demeaned_data = self.X - self.mean
         return demeaned_data
     
     def normalize(self):
-        mean = np.mean(self.X, axis=0)
-        standard_deviation = np.std(self.X, axis=0)
-        standard_deviation[standard_deviation == 0] = 1.0
-        normalized_data = (self.X - mean) / standard_deviation
+        self.mean = np.mean(self.X, axis=0)
+        self.standard_deviation = np.std(self.X, axis=0)
+        self.standard_deviation[self.standard_deviation == 0] = 1.0
+        normalized_data = (self.X - self.mean) / self.standard_deviation
         return normalized_data
     
     def transform(self):
@@ -25,18 +26,24 @@ class PCA():
         if self.type == 'normalize':
             X_new = self.normalize()
         
-        cov_mat = np.cov(X_new , rowvar = False)
-        eigen_values , eigen_vectors = np.linalg.eigh(cov_mat)
-
-        sorted_index = np.argsort(eigen_values)[: : -1]
- 
-        sorted_eigenvalue = eigen_values[sorted_index]
-        sorted_eigenvectors = eigen_vectors[:, sorted_index]
-
-        eigenvector_subset = sorted_eigenvectors[:, 0:self.d]
-
-        X_reduced = np.dot(eigenvector_subset.transpose() , X_new.transpose()).transpose()
-
+        U, S, VT = np.linalg.svd(X_new)
+        V = np.reshape(VT[:self.d], (self.D, self.d))
+        X_reduced = np.dot(X_new, V)
         self.X_reduced = X_reduced
-        self.eigen_vectors = eigenvector_subset
-        return X_reduced
+        self.eigen_vectors = V
+
+        X_recons = self.reconstruct()
+
+        if self.type == 'demean':
+            X_recons = X_recons + self.mean
+        if self.type == 'normalize':
+            X_recons = (X_recons * self.standard_deviation) + self.mean
+
+        return X_reduced, X_recons
+    
+    def reconstruct(self):
+        X_reconstructed = np.dot(self.X_reduced, self.eigen_vectors.transpose())
+        return X_reconstructed
+    
+    def reconstruction_error(self):
+        return np.sum((self.X - self.reconstruct())**2)/len(self.X)
