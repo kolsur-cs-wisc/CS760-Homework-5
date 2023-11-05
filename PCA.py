@@ -32,18 +32,19 @@ class PCA():
         self.X_reduced = X_reduced
         self.eigen_vectors = V
 
-        X_recons = self.reconstruct()
+        return X_reduced, self.reconstruct()
+
+
+    
+    def reconstruct(self):
+        X_recons = np.dot(self.X_reduced, self.eigen_vectors.transpose())
 
         if self.type == 'demean':
             X_recons = X_recons + self.mean
         if self.type == 'normalize':
             X_recons = (X_recons * self.standard_deviation) + self.mean
 
-        return X_reduced, X_recons
-    
-    def reconstruct(self):
-        X_reconstructed = np.dot(self.X_reduced, self.eigen_vectors.transpose())
-        return X_reconstructed
+        return X_recons
     
     def reconstruction_error(self):
         return np.sum((self.X - self.reconstruct())**2)/len(self.X)
