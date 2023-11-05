@@ -32,9 +32,7 @@ class PCA():
         self.X_reduced = X_reduced
         self.eigen_vectors = V
 
-        return X_reduced, self.reconstruct()
-
-
+        return X_reduced, self.eigen_vectors, self.reconstruct()
     
     def reconstruct(self):
         X_recons = np.dot(self.X_reduced, self.eigen_vectors.transpose())

@@ -17,17 +17,17 @@ def main():
     errors = []
 
     pca_model = PCA(X, 1)
-    X_pca, X_recons = pca_model.transform()
+    X_pca, params, X_recons = pca_model.transform()
     plotData(X, X_recons, 'Buggy')
     errors.append(f'Buggy PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
     pca_model = PCA(X, 1, 'demean')
-    X_pca, X_recons = pca_model.transform()
+    X_pca, params, X_recons = pca_model.transform()
     plotData(X, X_recons, 'Demeaned')
     errors.append(f'Demeaned PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
     pca_model = PCA(X, 1, 'normalize')
-    X_pca, X_recons = pca_model.transform()
+    X_pca, params, X_recons = pca_model.transform()
     plotData(X, X_recons, 'Normalized')
     errors.append(f'Normalized PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
