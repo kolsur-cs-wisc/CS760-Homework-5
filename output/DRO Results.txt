@@ -1,0 +1,1 @@
+DRO 2D Dataset Reconstruction Error = 0.01000608562851292

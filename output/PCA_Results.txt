@@ -1,0 +1,3 @@
+Buggy PCA 2D Dataset Reconstruction Error = 0.8869030837347942
+Demeaned PCA 2D Dataset Reconstruction Error = 0.01000608562851292
+Normalized PCA 2D Dataset Reconstruction Error = 0.049472083454770666
