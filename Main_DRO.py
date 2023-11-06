@@ -8,16 +8,22 @@ def plotData(X, X_recons):
     plt.xlabel('Dimension 1')
     plt.ylabel('Dimension 2')
     plt.title('DRO Method')
-    plt.savefig(f'output/DRO_data2D.png')
+    plt.savefig(f'output/DRO_dataD.png')
     plt.show()
 
 def main():
     X = np.loadtxt('data/data2D.csv', delimiter=',')
+    X1000 = np.loadtxt('data/data1000D.csv', delimiter=',')
 
-    dro_model = DRO(X, 1)
-    X_pca, X_recons = dro_model.transform()
-    plotData(X, X_recons)
-    np.savetxt('output/DRO Results.txt', [f'DRO 2D Dataset Reconstruction Error = {dro_model.reconstruction_error()}'], fmt = '%s')
+    d = 750
+    errors = []
+    for d in range(0, 1001):
+        dro_model = DRO(X1000, d)
+        X_pca, X_recons = dro_model.transform()
+        # plotData(X, X_recons)
+        
+        errors.append(f'DRO 1000D Dataset Reconstruction Error with d {d} = {dro_model.reconstruction_error()}')
+    np.savetxt('output/DRO 1000D Results.txt', errors, fmt = '%s')
 
 if __name__ == '__main__':
     main()
