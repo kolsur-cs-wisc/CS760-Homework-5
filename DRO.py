@@ -11,11 +11,11 @@ class DRO():
         X_center = self.X - self.b
         U, S, VT = np.linalg.svd(X_center)
         self.A = np.reshape(VT[:self.d], (self.D, self.d))
-        self.Z = np.matmul(X_center, self.A)
-        return self.Z, self.reconstruct()
+        self.Z = np.dot(X_center, self.A)
+        return self.Z, self.reconstruct(), S
     
     def reconstruct(self):
-        self.X_recons = np.matmul(self.Z, self.A.transpose()) + self.b
+        self.X_recons = np.dot(self.Z, self.A.transpose()) + self.b
         return self.X_recons
 
     def reconstruction_error(self):
