@@ -1,5 +1,5 @@
-Sigma = 0.5, Cluster Centers = [array([-1.27336818, -1.13725429]), array([-0.02791211,  1.17977429]), array([ 1.03350788, -1.10066685])], Clustering Objective = 326.14828206716464, Clustering Accuracy = 0.82
-Sigma = 1, Cluster Centers = [array([0.09490712, 1.40278903]), array([-1.84868161, -1.2283131 ]), array([ 0.91548285, -1.29252145])], Clustering Objective = 534.630041141039, Clustering Accuracy = 0.68
-Sigma = 2, Cluster Centers = [array([0.37790789, 1.38434616]), array([-2.03625226, -1.47622994]), array([ 1.59599049, -2.11175731])], Clustering Objective = 1069.8016111324475, Clustering Accuracy = 0.56
-Sigma = 4, Cluster Centers = [array([ 1.60643216, -2.32109747]), array([-2.66732051, -1.1922063 ]), array([0.27236703, 2.36666002])], Clustering Objective = 1470.8925872982986, Clustering Accuracy = 0.5766666666666667
-Sigma = 8, Cluster Centers = [array([-3.15934145, -0.40601805]), array([2.32519789, 3.25533499]), array([ 1.81393071, -3.63968658])], Clustering Objective = 3584.8766593149785, Clustering Accuracy = 0.4266666666666667
+Sigma = 0.5, Cluster Centers = [array([0.02458479, 0.83569254]), array([ 1.19097307, -1.22978609]), array([-1.18901474, -1.20499313])], Clustering Objective = 305.0516938170872, Clustering Accuracy = 0.8333333333333334
+Sigma = 1, Cluster Centers = [array([-1.75318401, -1.44153868]), array([-0.33064052,  1.53009992]), array([ 1.06809808, -1.10706142])], Clustering Objective = 544.1287639178103, Clustering Accuracy = 0.7166666666666667
+Sigma = 2, Cluster Centers = [array([ 1.56916396, -1.9763337 ]), array([0.10906242, 1.56735504]), array([-2.18516176, -1.56283788])], Clustering Objective = 1053.2785163229223, Clustering Accuracy = 0.6333333333333333
+Sigma = 4, Cluster Centers = [array([ 1.46760423, -1.92594875]), array([-3.096604  , -1.00673673]), array([0.41208424, 3.07149838])], Clustering Objective = 1733.0506081517528, Clustering Accuracy = 0.55
+Sigma = 8, Cluster Centers = [array([1.66669487, 2.63206879]), array([ 2.37823235, -5.04511352]), array([-3.75537349, -1.37278991])], Clustering Objective = 3902.2457881657047, Clustering Accuracy = 0.45666666666666667
