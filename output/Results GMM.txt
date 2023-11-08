@@ -1,15 +1,15 @@
-Sigma = 0.5, Cluster Centers = [[-0.94286596 -1.08721055]
- [ 0.08015261  0.6409962 ]
- [ 1.34423415 -1.29571473]], Clustering Objective = 919.2881703599769, Clustering Accuracy = 0.8233333333333334
-Sigma = 1, Cluster Centers = [[-1.05479949  0.95547438]
- [ 0.66273507 -0.42211927]
- [-0.51735154 -1.15857208]], Clustering Objective = 1070.2848809576105, Clustering Accuracy = 0.67
-Sigma = 2, Cluster Centers = [[-0.6507985  -0.54223546]
- [ 1.20761739 -1.63991705]
- [-0.45892382  0.85232532]], Clustering Objective = 1247.1790452712196, Clustering Accuracy = 0.6333333333333333
-Sigma = 4, Cluster Centers = [[-0.16341864  2.39175242]
- [ 1.56238842 -1.9425996 ]
- [-1.21962006 -0.20449311]], Clustering Objective = 1412.1027799534195, Clustering Accuracy = 0.5333333333333333
-Sigma = 8, Cluster Centers = [[ 1.87392598 -4.0436245 ]
- [-1.2959643   1.48030853]
- [-0.3719592   0.27377256]], Clustering Objective = 1643.690862673081, Clustering Accuracy = 0.3933333333333333
+Sigma = 0.5, Cluster Centers = [[-1.1855112  -1.20161426]
+ [ 0.01146994  0.59353487]
+ [ 1.1495273  -1.12788719]], Clustering Objective = 919.5661256625231, Clustering Accuracy = 0.82
+Sigma = 1, Cluster Centers = [[ 0.92058724 -0.90178345]
+ [-0.47192378  1.16209948]
+ [-0.78960582 -1.24283456]], Clustering Objective = 1070.1478594549917, Clustering Accuracy = 0.73
+Sigma = 2, Cluster Centers = [[-0.64225332 -0.54425212]
+ [ 1.26571377 -1.74053245]
+ [-0.44312978  0.84741126]], Clustering Objective = 1247.1430218937276, Clustering Accuracy = 0.6366666666666667
+Sigma = 4, Cluster Centers = [[ 1.43785158 -1.73277083]
+ [-1.24743561 -0.29107289]
+ [-0.67551058  2.12856501]], Clustering Objective = 1412.1205013136653, Clustering Accuracy = 0.53
+Sigma = 8, Cluster Centers = [[ 1.72553549 -3.52274011]
+ [-1.27938675  1.50685237]
+ [-0.5236849   0.26691742]], Clustering Objective = 1643.8641352955606, Clustering Accuracy = 0.38333333333333336
