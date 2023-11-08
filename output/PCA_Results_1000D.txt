@@ -1,0 +1,3 @@
+Buggy PCA 1000D Dataset Reconstruction Error = 29638.89201790767
+Demeaned PCA 1000D Dataset Reconstruction Error = 28021.36121282709
+Normalized PCA 1000D Dataset Reconstruction Error = 28021.36121282709

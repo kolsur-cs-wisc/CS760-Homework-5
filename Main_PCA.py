@@ -12,26 +12,27 @@ def plotData(X, X_recons, type=''):
     plt.show()
 
 def main():
-    X = np.loadtxt('data/data2D.csv', delimiter=',')
+    D = 1000
+    X = np.loadtxt(f'data/data{D}D.csv', delimiter=',')
 
     errors = []
 
     pca_model = PCA(X, 1)
     X_pca, params, X_recons = pca_model.transform()
-    plotData(X, X_recons, 'Buggy')
-    errors.append(f'Buggy PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
+    # plotData(X, X_recons, 'Buggy')
+    errors.append(f'Buggy PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
     pca_model = PCA(X, 1, 'demean')
     X_pca, params, X_recons = pca_model.transform()
-    plotData(X, X_recons, 'Demeaned')
-    errors.append(f'Demeaned PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
+    # plotData(X, X_recons, 'Demeaned')
+    errors.append(f'Demeaned PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
-    pca_model = PCA(X, 1, 'normalize')
+    # pca_model = PCA(X, 1, 'normalize')
     X_pca, params, X_recons = pca_model.transform()
-    plotData(X, X_recons, 'Normalized')
-    errors.append(f'Normalized PCA 2D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
+    # plotData(X, X_recons, 'Normalized')
+    errors.append(f'Normalized PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
-    np.savetxt('output/PCA_Results.txt', errors, fmt='%s')
+    np.savetxt(f'output/PCA_Results_{D}D.txt', errors, fmt='%s')
 
 if __name__ == '__main__':
     main()
