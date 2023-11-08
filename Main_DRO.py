@@ -21,11 +21,12 @@ def main():
     X = np.loadtxt('data/data2D.csv', delimiter=',')
     X1000 = np.loadtxt('data/data1000D.csv', delimiter=',')
 
-    d = 750
+    d = 30
     dro_model = DRO(X, 1)
     dro_model = DRO(X1000, d)
     X_pca, X_recons, Singular_Values = dro_model.transform()
     # plotData(X, X_recons)
+    print(dro_model.reconstruction_error())
     plotSingularValues(Singular_Values)
     errors = []
     for d in range(0, 1001):
