@@ -27,7 +27,7 @@ class PCA():
             X_new = self.normalize()
         
         U, S, VT = np.linalg.svd(X_new)
-        V = np.reshape(VT[:self.d], (self.D, self.d))
+        V = VT[:self.d].T
         X_reduced = np.dot(X_new, V)
         self.X_reduced = X_reduced
         self.eigen_vectors = V

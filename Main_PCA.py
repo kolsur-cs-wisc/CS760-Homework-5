@@ -13,21 +13,22 @@ def plotData(X, X_recons, type=''):
 
 def main():
     D = 1000
+    d = 30
     X = np.loadtxt(f'data/data{D}D.csv', delimiter=',')
 
     errors = []
 
-    pca_model = PCA(X, 1)
+    pca_model = PCA(X, d)
     X_pca, params, X_recons = pca_model.transform()
     # plotData(X, X_recons, 'Buggy')
     errors.append(f'Buggy PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
-    pca_model = PCA(X, 1, 'demean')
+    pca_model = PCA(X, d, 'demean')
     X_pca, params, X_recons = pca_model.transform()
     # plotData(X, X_recons, 'Demeaned')
     errors.append(f'Demeaned PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')
 
-    # pca_model = PCA(X, 1, 'normalize')
+    pca_model = PCA(X, d, 'normalize')
     X_pca, params, X_recons = pca_model.transform()
     # plotData(X, X_recons, 'Normalized')
     errors.append(f'Normalized PCA {D}D Dataset Reconstruction Error = {pca_model.reconstruction_error()}')

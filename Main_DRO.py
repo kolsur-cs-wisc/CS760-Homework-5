@@ -28,13 +28,6 @@ def main():
     # plotData(X, X_recons)
     print(dro_model.reconstruction_error())
     plotSingularValues(Singular_Values)
-    errors = []
-    for d in range(0, 1001):
-        dro_model = DRO(X1000, d)
-        X_pca, X_recons, Singular_Values = dro_model.transform()
-        
-        errors.append(f'DRO 1000D Dataset Reconstruction Error with d {d} = {dro_model.reconstruction_error()}')
-    np.savetxt('output/DRO 1000D Results.txt', errors, fmt = '%s')
 
 if __name__ == '__main__':
     main()
